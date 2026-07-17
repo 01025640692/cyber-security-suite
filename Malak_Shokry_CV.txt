@@ -19,4 +19,11 @@ IT Support & Network Specialist |
 - تتبعت وحللت سجلات النظام والأخطاء البرمجية (Debugging) لإصلاح أعطال السيرفرات المحلية بسرعة وضمان استقرار بيئة العمل بنسبة 100%.
 
 ==================================================================
-EOF
+EOF==================================================================
+                      TECHNICAL SKILLS & TOOLING
+==================================================================
+- Languages & Core Dev: Full-Stack Python 3.13, GUI (PyQt5 Framework), Local Micro-Servers (Flask Client Routing) [local].
+- Defensive Infrastructure: Advanced Data Loss Prevention (DLP Matrix), Dynamic IP Blocker (Firewall Custom Sandboxing) [local].
+- Incident Response & Forensics: EXIF Metadata Image Analytics (Pillow), OSINT Automated Web Scrapers, Malware Hash Integrity Validation.
+- Offensive Auditing & Automation: Asynchronous Threaded Network Scanners, Packet Sniffing, Web Scanners for SQLi / XSS vulnerabilities.
+- Engineering Workflows: Local Service Daemonization (Linux Systemd Services Configuration), GitHub Version Control Architecture [local].
