@@ -36,3 +36,4 @@ pip install PyQt5 pillow flask --break-system-packages
 python3 desktop_app.py
 ```
 
+* CSRF Vulnerability Scanner: Validates HTML forms and anti-forgery anti-tokens [local]
