@@ -27,3 +27,4 @@ EOF==================================================================
 - Incident Response & Forensics: EXIF Metadata Image Analytics (Pillow), OSINT Automated Web Scrapers, Malware Hash Integrity Validation.
 - Offensive Auditing & Automation: Asynchronous Threaded Network Scanners, Packet Sniffing, Web Scanners for SQLi / XSS vulnerabilities.
 - Engineering Workflows: Local Service Daemonization (Linux Systemd Services Configuration), GitHub Version Control Architecture [local].
+• Server-Side Security: Engineered Remote Code Execution (RCE) and Command Injection Scanners to validate input fields against OS-level command exploits and unauthorized privileges [local].
