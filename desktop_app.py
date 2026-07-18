@@ -235,8 +235,7 @@ class MalakSecuritySuite(QWidget):
         if len(self.IP_TRACKER[client_ip]) > 15 or client_ip in self.BANNED_IPS:
             self.BANNED_IPS.add(client_ip)
             self.output_box.append(f"🚨 [🔥 SYSTEM ALERT] DDoS Attack Detected from {client_ip}! EMERGENCY AUTO-BLOCK ACTIVATED FOR ALL REF PORTS.")
-            return
-            
+            return Broken Authentication Scanners (OWASP Top 1 Validation)* Session Cookie & Token Security Auditors (Anti-Session Hijacking)* Remote Code Execution (RCE) & Command Injection Security Vector            
         self.output_box.append(log_text + f"[+] Execution Successful. Target Sandbox Environment Secure and Verified.")
 
 if __name__ == '__main__':
