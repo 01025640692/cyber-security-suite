@@ -1,2 +1,2 @@
- 🛡️ Ultimate 40-in-1 Graphical Cyber Security Suite 
+🛡️ Ultimate 50-in-1 Graphical Cyber Security Suite& Forensic Toolkit
  Server-Side Request Forgery (SSRF) Scanner: Audits loopback and internal request routing [local].* CORS Security Auditor: Validates cross-origin resource sharing headers configuration [local].* HTTP Parameter Pollution (HPP) Engine: Detects duplicate request parameter exploits [local].* File Upload Restriction Bypass Checker: Prevents malicious web-shell execution [local].* HTTP Security Headers Auditor: Verifies HSTS, CSP, and X-Frame-Options integration [local].واضغط Commit changes [local].
