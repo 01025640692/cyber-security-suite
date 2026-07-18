@@ -1,6 +1,4 @@
-🛡️ Ultimate 25-in-1 Graphical Cyber Security Suite
-
-Welcome to the **Ultimate Cyber Security Suite**, an enterprise-grade graphical repository engineered by **Eng. Malak Shokry**. This infrastructure integrates 20 sophisticated offensive testing modules, automation scanners, defense mechanics, and forensic utilities inside a high-performance **PyQt5 Desktop Application** and a localized **Flask Web Architecture** [local].
+Ultimate 30-in-1 Graphical Cyber Security SuiteWelcome to the **Ultimate Cyber Security Suite**, an enterprise-grade graphical repository engineered by **Eng. Malak Shokry**. This infrastructure integrates 20 sophisticated offensive testing modules, automation scanners, defense mechanics, and forensic utilities inside a high-performance **PyQt5 Desktop Application** and a localized **Flask Web Architecture** [local].
 
 ---
 
@@ -37,3 +35,4 @@ python3 desktop_app.py
 
 * CSRF Vulnerability Scanner: Validates HTML forms and anti-forgery anti-tokens [local]
 • XML Layer Security: Engineered XML External Entity (XXE) Injection Scanners to audit backend data inputs and verify disabling of external entity processing, preventing local file exposure.
+* NoSQL Injection Scanner: Audits modern database inputs (MongoDB) against query syntax bypasses.* XPath Injection Scanner: Audits XML query paths against data disclosure.* SOAP/XML Web Services Auditor: Secures corporate and banking API integrations against payload manipulation
