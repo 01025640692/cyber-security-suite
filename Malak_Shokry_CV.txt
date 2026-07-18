@@ -29,3 +29,11 @@ EOF==================================================================
 - Engineering Workflows: Local Service Daemonization (Linux Systemd Services Configuration), GitHub Version Control Architecture [local].
 • Server-Side Security: Engineered Remote Code Execution (RCE) and Command Injection Scanners to validate input fields against OS-level command exploits and unauthorized privileges [local].
 • Web Request Security: Developed Cross-Site Request Forgery (CSRF) Scanners to validate anti-forgery tokens within HTML forms, preventing unauthorized transaction and state changes [local].
+==================================================================
+                      TECHNICAL SKILLS & COMPETENCIES
+==================================================================
+• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options).
+• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass Discovery Vectors, SSL/TLS Integrity Analysis.
+• Enterprise Backend Auditing: SOAP/XML Web Services Securing, GraphQL Query & Introspection Scanning, XPath Query Sanitization, NoSQL (MongoDB) & LDAP Injection Protection.
+• Forensics & Investigation: Image EXIF Metadata Extraction (Pillow), Automated OSINT Scrapers, Malware Hash Signature Integrity Matching.
+• Development & DevSecOps: Python 3.13, Desktop GUI Architecture (PyQt5), Micro-Services Local Routing (Flask), Linux System Daemonization, Production Git Workflow.
