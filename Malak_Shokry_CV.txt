@@ -53,3 +53,27 @@ EOF==================================================================
 • Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection & Query Scanning, XPath/NoSQL Injection Protection.
 • Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching.
 • Software Development & DevSecOps: Python 3.13, Desktop GUI Architecture (PyQt5), Micro-Services Local Routing (Flask Client Backend), Linux System Daemonization, Production Git Workflow.
+==================================================================
+                      TECHNICAL SKILLS & COMPETENCIES
+==================================================================
+• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
+• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
+• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
+• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
+• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
+==================================================================
+                      TECHNICAL SKILLS & COMPETENCIES
+==================================================================
+• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
+• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
+• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
+• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
+• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
+==================================================================
+                      TECHNICAL SKILLS & COMPETENCIES
+==================================================================
+• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
+• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
+• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
+• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
+• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
