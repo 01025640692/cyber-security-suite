@@ -5,83 +5,12 @@ cat << 'EOF' > ~/Malak_Shokry_CV.txt
 
 Work Experience (الخبرة المهنية)
 ------------------------------------------------------------------
-Junior Information Security & Automation Engineer | Freelance & Open Source
-(يناير 2025 - حتى الآن)
-- صممت وبرمجت منظومة حماية رسومية مستقلة (15-in-1 Suite) باستخدام PyQt5 و Flask لأتمتة عمليات فحص واختبار اختراق الشبكات والمواقع.
-- بنيت أدوات فحص ثغرات الويب (SQLi / XSS) ومراقبة حركة حزم البيانات المباشرة للشبكة باستخدام مكتبات Scapy و Requests.
-- طوّرت وحدة استخبارات رقمية للتحقيق الجنائي (OSINT/DFIR) لاستخراج الميتاداتا والبيانات الجغرافية المخفية من ملفات الصور عبر مكتبة Pillow.
-- برمجت أنظمة حماية منع تسريب البيانات الحساسة (DLP Scanner) بالاعتماد على Regex Matrix لرصد وإحباط تسريب كلمات المرور والـ API Keys داخل الأكواد البرمجية.
-
-IT Support & Network Specialist | 
-( التاريخ: من١/٢٠٢٥ ..)
-- أدرت البنية التحتية للشبكات المحلية، وقمت بإعداد جدران الحماية (Firewalls) ومراقبة منافذ الاتصال النشطة لضمان سلامة سيرفرات الشركة ومواقعها.
-- قدمت الدعم الفني المتقدم لنظم تشغيل Linux وويندوز، وقمنا بإدارة وضبط خدمات النظام الخلفية (Systemd Services) لرفع كفاءة تشغيل البرامج التلقائية للشركات.
-- تتبعت وحللت سجلات النظام والأخطاء البرمجية (Debugging) لإصلاح أعطال السيرفرات المحلية بسرعة وضمان استقرار بيئة العمل بنسبة 100%.
-
-==================================================================
-EOF==================================================================
-                      TECHNICAL SKILLS & TOOLING
-==================================================================
-- Languages & Core Dev: Full-Stack Python 3.13, GUI (PyQt5 Framework), Local Micro-Servers (Flask Client Routing) [local].
-- Defensive Infrastructure: Advanced Data Loss Prevention (DLP Matrix), Dynamic IP Blocker (Firewall Custom Sandboxing) [local].
-- Incident Response & Forensics: EXIF Metadata Image Analytics (Pillow), OSINT Automated Web Scrapers, Malware Hash Integrity Validation.
-- Offensive Auditing & Automation: Asynchronous Threaded Network Scanners, Packet Sniffing, Web Scanners for SQLi / XSS vulnerabilities.
-- Engineering Workflows: Local Service Daemonization (Linux Systemd Services Configuration), GitHub Version Control Architecture [local].
-• Server-Side Security: Engineered Remote Code Execution (RCE) and Command Injection Scanners to validate input fields against OS-level command exploits and unauthorized privileges [local].
-• Web Request Security: Developed Cross-Site Request Forgery (CSRF) Scanners to validate anti-forgery tokens within HTML forms, preventing unauthorized transaction and state changes [local].
 ==================================================================
                       TECHNICAL SKILLS & COMPETENCIES
 ==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options).
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass Discovery Vectors, SSL/TLS Integrity Analysis.
-• Enterprise Backend Auditing: SOAP/XML Web Services Securing, GraphQL Query & Introspection Scanning, XPath Query Sanitization, NoSQL (MongoDB) & LDAP Injection Protection.
-• Forensics & Investigation: Image EXIF Metadata Extraction (Pillow), Automated OSINT Scrapers, Malware Hash Signature Integrity Matching.
-• Development & DevSecOps: Python 3.13, Desktop GUI Architecture (PyQt5), Micro-Services Local Routing (Flask), Linux System Daemonization, Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options).
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Broken Object-Level Authorization Discovery.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection & Query Scanning, XPath/NoSQL Injection Protection.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching.
-• Software Development & DevSecOps: Python 3.13, Desktop GUI Architecture (PyQt5), Micro-Services Local Routing (Flask Client Backend), Linux System Daemonization, Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options).
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Broken Object-Level Authorization Discovery.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection & Query Scanning, XPath/NoSQL Injection Protection.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching.
-• Software Development & DevSecOps: Python 3.13, Desktop GUI Architecture (PyQt5), Micro-Services Local Routing (Flask Client Backend), Linux System Daemonization, Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
-• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
-• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
-• Software Development & DevSecOps: Python 3.14, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
-==================================================================
-                      TECHNICAL SKILLS & COMPETENCIES
-==================================================================
-• Security Engineering: Broken Authentication Audit, Access Control Validation, Data Loss Prevention (DLP Matrix), Dynamic Rate Limiting, HTTP Security Headers Verification (HSTS, CSP, X-Frame-Options), Session Puzzling Prevention, OAuth Integration Security.
-• Advanced Web & API Assessment: Full OWASP Top 10 Auditing (RCE, SQLi, CSRF, DOM-XSS, XXE, SSRF, CORS, HPP), File Upload Restriction Bypass, REST API Method Tampering Discovery & Object-Level Authorization Protection.
-• Network & Enterprise Security: DNS Spoofing & Cache Poisoning Auditing, Wireless Deauthentication Traffic Monitoring, SOAP/XML Web Services Securing, GraphQL Introspection Scanning, XPath/NoSQL Injection Protection, SMTP Email Injection Defense.
-• Forensics & Mobile Investigation: Mobile Deep Link Hijacking Scanners, Image EXIF Metadata Extraction (Pillow), Automated OSINT Web Scrapers, Malware Hash Signature Integrity Matching, Insecure File Permissions Detection.
-• Software Development & DevSecOps: Python, Linux Bash Scripting (Automation Daemons), Native GUI Architecture (PyQt5), Web Services Development (Flask Interface Routing), Production Git Workflow.
+• Enterprise Web & API Security (AppSec): Full OWASP Top 10 & API Top 10 Compliance, Broken Object-Level Authorization (BOLA/BMA), Mass Assignment Mitigation, GraphQL Introspection Defenses, REST Method Tampering Discovery, HTTP Parameter Pollution (HPP), Advanced Dynamic Fuzzing.
+• Cloud Engineering & Container Security (SecOps): Infrastructure-as-Code (IaC) Auditing (Terraform), Dockerfile Static Configuration Analysis, Kubernetes Cluster Auditing (Kube-Bench CIS Standards), VPC Flow Logs Filtering, Secret Leaks Protection, Hybrid-Cloud Traffic Monitoring.
+• AI & LLM Security Engineering: Advanced Prompts Defense Matrix, Direct/Indirect Prompt Injection Filtering, LLM Jailbreaking Defense Countermeasures, Training Data Poisoning Detection, Vector Database (Vector DB) Injection Security, RAG Data Leakage Protection.
+• Aerospace & Aerospace Telemetry Defenses: CCSDS Protocol Security Validation, Telemetry Command Injection Filtering, Ground Station Gateway Protection, Tracking & Command (TT&C) Link Verification, Flight Software (FSW) Integrity Auditing, GPS Spoofing Detection.
+• Quantum Cryptography & Post-Quantum Defense (PQC): Lattice-Based Cryptography Agility (Crystals-Kyber, Crystals-Dilithium, Falcon Parameter Auditing), Quantum Key Distribution (QKD) Eavesdropping Telemetry, OpenQASM Logic Gate Injection Auditing, Qubit Noise Isolation.
+• Software Engineering & DevSecOps Tools: Python 3.14, Linux Bash Automation Shell, Native GUI Architecture (PyQt5), Micro-Services Local Routing (Flask Client Backend), Secure Production Git Workflow.
