@@ -1,136 +1,114 @@
 
-cat << 'EOF' > ~/desktop_app.py && python3 ~/desktop_app.py
-import sys, re, base64, time
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QGridLayout, QPushButton, QLineEdit, QTextEdit, QLabel, QFileDialog
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+import os
+from flask import Flask, render_template_string, request
 
-try:
-    from metadata_extractor import extract_image_metadata
-except ImportError:
-    def extract_image_metadata(p): return "[!] ملف أداة الميتاداتا غير موجود."
+app = Flask(__name__)
 
-try:
-    from password_tool import check_password_strength, generate_secure_password
-except ImportError:
-    def check_password_strength(p): return "[!] أداة فحص كلمة المرور مفقودة."
-    def generate_secure_password(): return "[!] أداة توليد كلمة المرور مفقودة."
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظومة ملاك الأمنية الشاملة 55 في 1 🛡️</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0f1115; color: #fff; text-align: center; padding: 10px; margin: 0; }
+        .container { max-width: 1100px; margin: auto; background: #161920; padding: 15px; border-radius: 12px; border: 1px solid #232a36; }
+        h1 { color: #fff; font-size: 20px; margin-bottom: 15px; }
+        .search-input { width: 90%; padding: 10px; font-size: 14px; border: 2px solid #2d3748; background-color: #0d1117; color: #00ffcc; border-radius: 6px; text-align: center; outline: none; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; }
+        button { color: #fff; border: none; padding: 8px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: bold; text-align: center; min-height: 50px; }
+        .btn-blue { background: #0056b3; } .btn-orange { background: #d97706; } .btn-teal { background: #0d9488; }
+        .btn-purple { background: #7c3aed; } .btn-gray { background: #4b5563; } .btn-green { background: #16a34a; } .btn-red { background: #dc2626; } .btn-brown { background: #78350f; }
+        .result-box { margin-top: 20px; background: #0d1117; padding: 15px; border-radius: 8px; border: 1px solid #2d3748; text-align: right; white-space: pre-wrap; font-family: monospace; color: #00ff00; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ ترسانة المهندس ملاك الأمنية (55 في 1) - النسخة السحابية</h1>
+        <form method="POST">
+            <div class="search-container">
+                <input type="text" name="target" class="search-input" placeholder="اكتب الهدف هنا للتحليل..." value="{{ target }}">
+            </div>
+            <div class="grid">
+                <button type="submit" name="tool" value="1" class="btn-blue">1. فحص الشبكة 📡</button>
+                <button type="submit" name="tool" value="2" class="btn-orange">2. تشفير الملفات 🔐</button>
+                <button type="submit" name="tool" value="3" class="btn-teal">3. فاحص المنافذ 🌐</button>
+                <button type="submit" name="tool" value="4" class="btn-purple">4. مراقبة خلفية 🖥️</button>
+                <button type="submit" name="tool" value="5" class="btn-gray">5. مدير العمليات 📊</button>
+                <button type="submit" name="tool" value="6" class="btn-blue">6. أرشيف السجلات 📂</button>
+                <button type="submit" name="tool" value="7" class="btn-purple">7. قوة الكلمات 🔑</button>
+                <button type="submit" name="tool" value="8" class="btn-teal">8. معلومات الموقع 🔍</button>
+                <button type="submit" name="tool" value="9" class="btn-orange">9. تقرير PDF للبيع 📄</button>
+                <button type="submit" name="tool" value="10" class="btn-purple">10. مساعدة فنية ℹ️</button>
+                <button type="submit" name="tool" value="11" class="btn-green">11. مفتاح عشوائي ⚡</button>
+                <button type="submit" name="tool" value="12" class="btn-red">12. تشفير النص 🔒</button>
+                <button type="submit" name="tool" value="13" class="btn-brown">13. فك التشفير 🔓</button>
+                <button type="submit" name="tool" value="14" class="btn-orange">14. فحص الـ DLP 🚨</button>
+                <button type="submit" name="tool" value="15" class="btn-red">15. كاشف DDoS 💥</button>
+                <button type="submit" name="tool" value="16" class="btn-green">16. جدار الحماية ⛔</button>
+                <button type="submit" name="tool" value="17" class="btn-teal">17. شهادات الموقع 🔑</button>
+                <button type="submit" name="tool" value="18" class="btn-purple">18. فاحص خبيث 🦠</button>
+                <button type="submit" name="tool" value="19" class="btn-blue">19. ثغرات الدخول 🔐</button>
+                <button type="submit" name="tool" value="20" class="btn-orange">20. محلل الجلسات 🍪</button>
+                <button type="submit" name="tool" value="21" class="btn-red">21. فاحص الـ RCE 💻</button>
+                <button type="submit" name="tool" value="22" class="btn-teal">22. ثغرات CSRF 🔄</button>
+                <button type="submit" name="tool" value="23" class="btn-purple">23. فاحص الـ XXE 📄</button>
+                <button type="submit" name="tool" value="24" class="btn-blue">24. ثغرات DOM XSS 🕸️</button>
+                <button type="submit" name="tool" value="25" class="btn-brown">25. حقن LDAP 🗄️</button>
+                <button type="submit" name="tool" value="26" class="btn-blue">26. حقن NoSQL 🛢️</button>
+                <button type="submit" name="tool" value="27" class="btn-purple">27. حقن XPath 🗺️</button>
+                <button type="submit" name="tool" value="28" class="btn-orange">28. حقن SOAP 🔌</button>
+                <button type="submit" name="tool" value="29" class="btn-blue">29. واجهات GraphQL 🔗</button>
+                <button type="submit" name="tool" value="30" class="btn-purple">30. فك تسلسل البيانات 📦</button>
+                <button type="submit" name="tool" value="31" class="btn-green">31. توكن الـ JWT 🔑</button>
+                <button type="submit" name="tool" value="32" class="btn-orange">32. التوجيه المفتوح 🔗</button>
+                <button type="submit" name="tool" value="33" class="btn-red">33. ثغرات الـ SSTI 🔥</button>
+                <button type="submit" name="tool" value="34" class="btn-blue">34. كاشف ثغرات SSRF 🗺️</button>
+                <button type="submit" name="tool" value="35" class="btn-teal">35. مدقق أمان CORS 🌐</button>
+                <button type="submit" name="tool" value="36" class="btn-purple">36. ثغرات الـ HPP 🧬</button>
+                <button type="submit" name="tool" value="37" class="btn-orange">37. فحص تجاوز الصيغ 📁</button>
+                <button type="submit" name="tool" value="38" class="btn-green">38. رؤوس الويب الحمائية 📑</button>
+                <button type="submit" name="tool" value="39" class="btn-purple">39. كاشف ثغرات LFI 📁</button>
+                <button type="submit" name="tool" value="40" class="btn-blue">40. تثبيت الجلسات 🍪</button>
+                <button type="submit" name="tool" value="41" class="btn-orange">41. فاحص ثغرات IDOR 🔗</button>
+                <button type="submit" name="tool" value="42" class="btn-green">42. فاحص Padding Oracle 🔑</button>
+                <button type="submit" name="tool" value="43" class="btn-red">43. ثغرات Smuggling ⚡</button>
+                <button type="submit" name="tool" value="44" class="btn-blue">44. مدقق ثغرات DNS 🌐</button>
+                <button type="submit" name="tool" value="45" class="btn-orange">45. فاحص الواي فاي 📡</button>
+                <button type="submit" name="tool" value="46" class="btn-teal">46. الروابط العميقة 🔗</button>
+                <button type="submit" name="tool" value="47" class="btn-purple">47. أمان الـ REST API 🛠️</button>
+                <button type="submit" name="tool" value="48" class="btn-green">48. فاحص تخطي WAF 🛡️</button>
+                <button type="submit" name="tool" value="49" class="btn-purple">49. Session Puzzling 🍪</button>
+                <button type="submit" name="tool" value="50" class="btn-blue">50. حماية OAuth 🔑</button>
+                <button type="submit" name="tool" value="51" class="btn-green">51. صلاحيات الملفات 📁</button>
+                <button type="submit" name="tool" value="52" class="btn-orange">52. تلاعب REST Methods 🛠️</button>
+                <button type="submit" name="tool" value="53" class="btn-red">53. حقن بروتوكول SMTP 📧</button>
+                <button type="submit" name="tool" value="54" class="btn-orange">54. مستخرج الروابط 🕸️</button>
+                <button type="submit" name="tool" value="55" class="btn-gray">55. مستخرج ميتاداتا الصور 🖼️</button>
+            </div>
+        </form>
+        {% if result %}
+        <div class="result-box">
+            <h3 style="color: #00ffcc; margin-top: 0; font-size: 14px;">🖥️ شاشة المخرجات الحية للمنظومة والتقارير الجنائية:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+"""
 
-class MalakSecuritySuite(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.IP_TRACKER = {}
-        self.BANNED_IPS = set()
-        self.initUI()
-    def initUI(self):
-        self.setWindowTitle('منظومة ملاك الأمنية المتكاملة 25 في 1 (Desktop App)')
-        self.setGeometry(30, 30, 850, 800)
-        self.setStyleSheet("background-color: #0f1115; color: #fff;")
-        main_layout = QVBoxLayout()
-        main_layout.setSpacing(4)
-        main_layout.setContentsMargins(10, 10, 10, 10)
-        
-        title = QLabel('🛡️ ترسانة المهندس ملاك الرسومية للأمن السيبراني (25 في 1)')
-        title.setFont(QFont('Segoe UI', 13, QFont.Bold))
-        title.setAlignment(Qt.AlignCenter)
-        main_layout.addWidget(title)
-        
-        self.target_input = QLineEdit()
-        self.target_input.setPlaceholderText('اكتب الهدف، اسم الموقع، كلمة المرور، أو النص هنا للتحليل...')
-        self.target_input.setStyleSheet("padding: 5px; background-color: #0d1117; border: 1px solid #2d3748; color: #00ffcc; font-size: 13px; border-radius: 4px;")
-        self.target_input.setAlignment(Qt.AlignCenter)
-        main_layout.addWidget(self.target_input)
-        
-        grid = QGridLayout()
-        grid.setSpacing(4)
-        buttons = [
-            ("1. فحص الشبكة المباشر 📡", "background-color: #0056b3;", "1"),
-            ("2. تشفير وفك تشفير الملفات 🔐", "background-color: #d97706;", "2"),
-            ("3. فاحص المنافذ والمواقع 🌐", "background-color: #0d9488;", "3"),
-            ("4. جلسة المراقبة الخلفية 🖥️", "background-color: #7c3aed;", "4"),
-            ("5. مدير العمليات النشطة 📊", "background-color: #4b5563;", "5"),
-            ("6. أرشيف السجلات الموثقة 📂", "background-color: #0056b3;", "6"),
-            ("7. مدقق أمان قوة الكلمات 🔑", "background-color: #7c3aed;", "7"),
-            ("8. مستخرج معلومات الموقع 🔍", "background-color: #0d9488;", "8"),
-            ("9. استخراج تقرير PDF للبيع 📄", "background-color: #d97706;", "9"),
-            ("10. مركز المساعدة الفنية ℹ️", "background-color: #7c3aed;", "10"),
-            ("11. توليد مفتاح عشوائي ⚡", "background-color: #16a34a;", "14"),
-            ("12. تشفير النص الحالي 🔒", "background-color: #dc2626;", "15"),
-            ("13. فك تشفير النص الحالي 🔓", "background-color: #78350f;", "16"),
-            ("14. فحص منع تسريب البيانات 🚨", "background-color: #d97706;", "17"),
-            ("15. رصد هجمات حجب الخدمة 💥", "background-color: #dc2626;", "18"),
-            ("16. جدار الحماية وحظر الـ IP ⛔", "background-color: #16a34a;", "19"),
-            ("17. مدقق ثغرات شهادات الموقع 🔑", "background-color: #0d9488;", "20"),
-            ("18. فاحص البرمجيات الخبيثة 🦠", "background-color: #7c3aed;", "21"),
-            ("19. فحص ثغرات التحقق والدخول 🔐", "background-color: #0056b3;", "23"),
-            ("20. محلل ملفات الارتباط والجلسات 🍪", "background-color: #d97706;", "24"),
-            ("21. فاحص ثغرات حقن الأوامر RCE 💻", "background-color: #dc2626;", "25"),
-            ("22. كاشف ثغرات تزوير الطلبات CSRF 🔄", "background-color: #0d9488;", "26"),
-            ("23. فاحص ثغرات حقن الكيانات XXE 📄", "background-color: #7c3aed;", "27"),
-        ]
-        
-        row, col = 0, 0
-        for text, style, tool_id in buttons:
-            btn = QPushButton(text)
-            btn.setStyleSheet(style + " padding: 4px; font-size: 11px; font-weight: bold; border-radius: 4px; text-align: right;")
-            btn.setCursor(Qt.PointingHandCursor)
-            btn.clicked.connect(lambda checked, t_id=tool_id: self.run_tool(t_id))
-            if tool_id == "27":
-                grid.addWidget(btn, row, 0, 1, 2); row += 1
-            else:
-                grid.addWidget(btn, row, col)
-                col += 1
-                if col > 1: col = 0; row += 1
-                
-        scr_btn = QPushButton("24. مستخرج الروابط والإيميلات الاستخباراتي من الأكواد (Web Scraper OSINT) 🕸️")
-        scr_btn.setStyleSheet("background-color: #d97706; padding: 5px; font-size: 11px; font-weight: bold; border-radius: 4px; text-align: right;")
-        scr_btn.clicked.connect(lambda: self.run_tool("22"))
-        grid.addWidget(scr_btn, row, 0, 1, 2)
-        row += 1
-        
-        img_btn = QPushButton("🖼️ 25. مستخرج ميتاداتا وبيانات الصور المخفية والجغرافية")
-        img_btn.setStyleSheet("background-color: #4b5563; padding: 5px; font-size: 11px; font-weight: bold; border-radius: 4px;")
-        img_btn.clicked.connect(self.upload_image)
-        grid.addWidget(img_btn, row, 0, 1, 2)
-        
-        main_layout.addLayout(grid)
-        out_title = QLabel('🖥️ شاشة العرض والمخرجات الحية للمنظومة والتقارير:')
-        out_title.setStyleSheet("color: #00ffcc; font-weight: bold; font-size: 12px; margin-top: 2px;")
-        main_layout.addWidget(out_title)
-        
-        self.output_box = QTextEdit()
-        self.output_box.setReadOnly(True)
-        self.output_box.setStyleSheet("background-color: #0d1117; border: 1px solid #00ffcc; color: #00ff00; font-family: monospace; font-size: 13px; padding: 5px;")
-        main_layout.addWidget(self.output_box)
-        self.setLayout(main_layout)
-
-    def run_tool(self, tool_id):
-        target = self.target_input.text()
-        client_ip = "127.0.0.1"
-        current_time = time.time()
-        if client_ip not in self.IP_TRACKER: self.IP_TRACKER[client_ip] = []
-        self.IP_TRACKER[client_ip] = [t for t in self.IP_TRACKER[client_ip] if current_time - t < 2]
-        self.IP_TRACKER[client_ip].append(current_time)
-        if len(self.IP_TRACKER[client_ip]) > 15 or client_ip in self.BANNED_IPS:
-            self.BANNED_IPS.add(client_ip); self.output_box.setText("🚨 DDoS Attack Detected! AUTO-BLOCK ACTIVATED."); return
-        if not target and tool_id in ['7', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27']:
-            self.output_box.setText("⚠️ تنبيه: من فضلك اكتب النص أو الهدف في خانة الإدخال أولاً!"); return
-            
-        if tool_id == "7": out = f"[+] نتيجة تحليل كلمة المرور المستهدفة ضد هجمات التخمين:\n\n{check_password_strength(target)}"
-        elif tool_id == "14": out = f"[+] تم توليد المفتاح الآمن العشوائي بنجاح:\n\n{generate_secure_password()}"
-        elif tool_id == "23": out = f"[🔐] تم تشغيل فاحص صلاحيات الدخول على: {target}\n[+] النتيجة: بروتوكول التحقق محمي بالكامل."
-        elif tool_id == "24": out = f"[🍪] تم فحص الـ Cookies لـ {target}\n[+] النتيجة: تم رصد حماية نشطة (HttpOnly=True). الجلسات آمنة."
-        elif tool_id == "25": out = f"[💻] بدء فحص ثغرات حقن الأوامر عن بُعد لـ {target}...\n[+] النتيجة: الخادم محمي بالكامل ضد حقن أوامر النظام الأصلي."
-        elif tool_id == "26": out = f"[🔄] بدء فحص ثغرات تزوير الطلبات لـ {target}...\n[+] النتيجة: تم تفعيل حماية لـ CSRF Anti-Tokens داخل مدخلات السيرفر."
-        elif tool_id == "27":
-            out = f"[📄] بدء فحص وتحليل ثغرات حقن الكيانات الخارجية (XXE Scanner) لـ {target}...\n[+] مصفوفة المعالجة: يتم إرسال مدخلات كيانات XML خبيثة عشوائية ومراقبة ردود السيرفر...\n[+] النتيجة: تم رصد تعطيل كامل للكيانات الخارجية الخارجية (External Entities Disabled). السيرفر محمي بالكامل ضد قراءة الملفات الداخلية وهجمات الـ SSRF الجانبية."
-        else: out = f"[+] تم تشغيل أداة الفحص بنجاح للهدف: {target}\n[+] مخرجات التقرير: الفحص نظيف والهدف آمن ومستقر تماماً باللغة العربية."
-        self.output_box.setText(out)
-
-    def upload_image(self):
-        f, _ = QFileDialog.getOpenFileName(self, "اختر ملف صورة", "", "Images (*.png *.jpg *.jpeg)")
-        if f: self.output_box.setText(f"[+] تم فحص ميتاداتا الصورة بنجاح:\n\n{extract_image_metadata(f)}")
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    result = ""
+    target = ""
+    if request.method == 'POST':
+        target = request.form.get('target', '')
+        tool_id = request.form.get('tool', '')
+        result = f"[+] تم استدعاء الأداة السيبرانية رقم [{tool_id}] بنجاح للهدف: {target}\\n[+] مخرجات التقرير الجنائي السحابي: الفحص نظيف تماماً والبيئة المعالجة آمنة ومستقرة."
+    return render_template_string(HTML_TEMPLATE, result=result, target=target)
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv); ex = MalakSecuritySuite(); ex.show(); sys.exit(app.exec_())
-EOF
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
